@@ -1,33 +1,38 @@
 {
-    "name": "blog",
-    "version": "1.0.0",
-    "description": "",
-    "main": "src/index.js",
-    "scripts": {
-        "start": "nodemon --inspect src/index.js",
-        "watch": "sass --watch src/resources/scss/app.scss src/public/css/app.css",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+ssh://git@github.com/Thang-HaDuy/node_blog.git"
-    },
-    "keywords": [
-        "blog"
-    ],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/Thang-HaDuy/node_blog/issues"
-    },
-    "homepage": "https://github.com/Thang-HaDuy/node_blog#readme",
-    "dependencies": {
-        "express": "^4.18.2",
-        "express-handlebars": "^6.0.6"
-    },
-    "devDependencies": {
-        "morgan": "^1.10.0",
-        "nodemon": "^2.0.20",
-        "sass": "^1.55.0"
+  "name": "nodejs_blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "beautiful": "lint-staged",
+    "start": "nodemon --inspect src/index.js",
+    "watch": "sass --watch src/resources/scss/app.scss src/public/css/app.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.7.1",
+    "mongoose-delete": "^0.5.4",
+    "mongoose-slug-generator": "^1.0.4"
+  },
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1",
+    "sass": "^1.56.0"
+  }
 }
